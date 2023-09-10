@@ -1,6 +1,6 @@
 import type { LoaderArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
-import { Outlet, useLocation, useNavigate } from "@remix-run/react";
+import { Link, Outlet, useLocation } from "@remix-run/react";
 import clsx from "clsx";
 import { cn } from "~/lib/utils";
 import { Button } from "~/components/ui/button";
@@ -29,7 +29,6 @@ export const loader = async ({ request }: LoaderArgs) => {
 };
 
 export default function LoginLayout() {
-  const navigate = useNavigate();
   const { isForgotPasswordPage, isLoginPage, isRegisterPage } =
     useGetCurrentPage();
 
@@ -67,11 +66,9 @@ export default function LoginLayout() {
             <h1 className="text-center !text-6xl text-black">{key} Title</h1>
             <p className="font-semibold text-black">{key} Description</p>
 
-            <Button
-              onClick={() => navigate(isLoginPage ? "/register" : "/login")}
-            >
-              {key === "Login" ? "Register" : "Login"}
-            </Button>
+            <Link to={isLoginPage ? "/register" : "/login"}>
+              <Button>{key === "Login" ? "Register" : "Login"}</Button>
+            </Link>
           </div>
         </div>
         <div
