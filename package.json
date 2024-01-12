@@ -5,9 +5,14 @@
     "build": "remix build",
     "dev": "remix dev",
     "start": "remix-serve build",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "db:gen": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "^5.8.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@remix-run/css-bundle": "^1.19.3",
     "@remix-run/node": "^1.19.3",
@@ -28,10 +33,14 @@
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "eslint": "^8.38.0",
+    "prisma": "^5.8.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.0.4"
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "prisma": {
+    "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
   }
 }
