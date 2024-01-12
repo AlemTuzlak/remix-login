@@ -3,7 +3,7 @@ import { Form } from "@remix-run/react";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 
-export const action = async ({}: ActionArgs) => {
+export const action = async ({ request }: ActionArgs) => {
   // your implementation here
   return null;
 };
@@ -19,12 +19,7 @@ export default function RegisterRoute() {
           Register
         </h1>
         <p className="text-center">Register below</p>
-        <Input
-          autoFocus
-          className="w-full"
-          placeholder="Enter your username"
-          name="username"
-        />
+
         <Input
           name="email"
           placeholder="Enter your email"
@@ -38,12 +33,6 @@ export default function RegisterRoute() {
           type="password"
           required
           className="w-full"
-        />
-        <Input
-          placeholder="Confirm password"
-          type="password"
-          className="w-full"
-          name="confirmPassword"
         />
 
         <Button type="submit" size="lg">

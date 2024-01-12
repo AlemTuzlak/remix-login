@@ -1,4 +1,5 @@
 {
+  "name": "remix-authentication",
   "private": true,
   "sideEffects": false,
   "scripts": {

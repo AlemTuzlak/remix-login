@@ -15,10 +15,11 @@ export default function LoginRoute() {
         <h1 className="mb-2 text-center text-6xl text-black lg:mb-4">Login</h1>
         <p className="text-center">Login below</p>
         <Input
-          placeholder="Enter your username/email"
+          placeholder="Enter your email"
           autoFocus
+          type="email"
           className="w-full"
-          name="identifier"
+          name="email"
         />
         <Input
           placeholder="Enter your password"
